@@ -8,21 +8,57 @@ criteria:
   symptom_analysis:
     name: "Knowledge & Symptom Analysis"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Provides a clear, textbook-level definition of 'psychological disorder' that explicitly mentions distress and/or impairment. Correctly classifies at least 5 normal and 5 disorder-related experiences from the case study with clear justification for each."
+      "4": "Good: Defines psychological disorder well but the definition may be less precise or miss a key component (like impairment). Correctly classifies most symptoms but may have minor errors or weaker justifications."
+      "3": "Adequate: Provides a basic or overly simple definition of a psychological disorder. Attempts to classify symptoms but has several errors or omissions (e.g., fewer than 3-4 examples for each category)."
+      "2": "Limited: The definition is vague, incorrect, or missing. Symptom classification is minimal, confused, or largely inaccurate."
+      "1": "Not Present: This section is missing or contains no relevant information."
   bps_factors:
     name: "Bio-Psycho-Social Factors"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Clearly identifies relevant factors in all three domains (Biological, Psychological, Social) and explains in detail how they interact with each other to contribute to the disorder (e.g., a feedback loop)."
+      "4": "Good: Identifies factors in all three domains and attempts to explain their interaction, but the explanation is superficial or less detailed."
+      "3": "Adequate: Lists factors from at least two of the three domains but provides little to no explanation of how they interact or connect."
+      "2": "Limited: Identifies factors from only one domain, or the identified factors are incorrect or irrelevant to the case study."
+      "1": "Not Present: This section is missing."
   diagnostic_primary:
     name: "Diagnostic Reasoning (Primary)"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Proposes a correct and well-supported primary diagnosis. Systematically maps specific evidence from the case study to each of the necessary DSM-5 (or relevant) criteria, including duration."
+      "4": "Good: Proposes a correct diagnosis with good justification, but the mapping to official criteria is less thorough or may miss a criterion (like duration)."
+      "3": "Adequate: Proposes a plausible diagnosis, but the justification is weak, vague, or simply restates symptoms without linking them to specific diagnostic criteria."
+      "2": "Limited: Proposes an incorrect or very poorly supported diagnosis."
+      "1": "Not Present: No primary diagnosis is provided."
   diagnostic_diff:
     name: "Differential Diagnosis"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Identifies a plausible alternative disorder and provides a clear, evidence-based argument explaining why it is less likely than the primary diagnosis, effectively 'ruling it out'."
+      "4": "Good: Identifies a plausible alternative and makes a reasonable comparison, but the argument for ruling it out is less convincing or lacks strong evidence from the case."
+      "3": "Adequate: Names a plausible alternative disorder but offers a minimal or very weak comparison to the primary diagnosis."
+      "2": "Limited: Names an inappropriate or highly unlikely alternative disorder, or the comparison is nonsensical."
+      "1": "Not Present: No differential diagnosis is provided."
   treatment:
     name: "Treatment & Justification"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Recommends specific, evidence-based treatments (e.g., CBT, specific medications) and provides a detailed justification explaining how each treatment component targets specific symptoms identified earlier in the analysis."
+      "4": "Good: Recommends appropriate, evidence-based treatments, but the justification is more generic and less connected to the specific symptoms of the case."
+      "3": "Adequate: Recommends a suitable treatment (e.g., 'therapy') but with little or no specific justification."
+      "2": "Limited: Recommends a vague, inappropriate, or outdated treatment."
+      "1": "Not Present: No treatment plan is provided."
   communication:
     name: "Communication & Referencing"
     max_points: 5
+    descriptors:
+      "5": "Excellent: Writing is clear, well-structured, and uses an academic tone. There are virtually no spelling or grammar errors. Referencing (e.g., APA/Harvard) is present and correctly formatted."
+      "4": "Good: Writing is mostly clear and structured. There may be a few minor errors in spelling, grammar, or referencing format."
+      "3": "Adequate: The structure is understandable but may be disorganized in places. There are several noticeable errors in grammar or referencing that may slightly hinder clarity."
+      "2": "Limited: The writing is difficult to follow due to poor structure, frequent errors, or major referencing issues. Word count rules may be significantly breached."
+      "1": "Not Present: The submission is incoherent, appears to be plagiarized, or is missing."
 
 # Optional: Maps the final point score to a letter grade.
 # Thresholds represent the minimum points needed for that grade.
