@@ -71,6 +71,10 @@ Each DOCX report lists the grade suggested by the AI (`assistant_grade.overall_g
 - PDF text extraction uses `PyPDF2`; encrypted or malformed PDFs may fail.
 - DOCX extraction now captures text inside tables.
 - The repository currently includes a Windows-based `venv` directory which can be removed if you prefer to create your own environment.
-- There are no automated tests.
+- Automated tests are provided under the `tests/` directory. Run them with:
+
+```bash
+python -m pytest
+```
 - Each run of `draft_grader.py` also outputs a `_feedback_review.txt` file summarising any inaccuracies in the AI feedback or areas already addressed in the submission.
 - Running `grader.py` performs a second pass to verify the grading. The result is saved as a `_grade_review.txt` file alongside each report, and a `grading_summary.csv` file summarises total points and grades.
