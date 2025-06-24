@@ -467,6 +467,7 @@ def format_feedback_as_docx(
             cid: {
                 "name": cfg.get("name", cid),
                 "max_points": cfg.get("max_points", 0),
+                "descriptors": cfg.get("descriptors", {}),
             }
             for cid, cfg in rubric_config.get("criteria", {}).items()
         }
@@ -491,6 +492,16 @@ def format_feedback_as_docx(
 
             doc.add_paragraph(f"Band Achieved: {band}")
             doc.add_paragraph(f"Points: {points_achieved} / {max_criterion_points}")
+
+            descriptors = criterion_details.get("descriptors", {})
+            if descriptors:
+                desc_text = descriptors.get(str(band))
+                if desc_text:
+                    doc.add_paragraph(
+                        f"Rubric Descriptor for Band {band}:",
+                        style="Intense Quote",
+                    )
+                    doc.add_paragraph(desc_text)
 
             doc.add_paragraph("AI's Rationale:", style="Intense Quote")
             doc.add_paragraph(rationale)

@@ -1,11 +1,11 @@
 ### Student-Facing Rubric (Concise)
-Criterion       A       B       C       D       E
-Knowledge & Symptom Analysis    Precise definition; ≥5 normal and ≥5 disorder-related experiences correctly classified and justified.   Mostly accurate classification; minor gaps.     Basic explanation; some errors.  Limited/confused classification.        Inaccurate or missing.
-B-P-S Factors   Biological, psychological and social factors clearly linked and interacting.    Most factors linked; minor gaps.        Factors listed; weak links.     Few factors; unclear links.     Incorrect / missing.
-Diagnostic Reasoning (primary)  DSM-5 criteria mapped, duration justified; diagnosis airtight.  Accurate, minor omissions.      Plausible but partial mapping. Weak or incorrect diagnosis.     Absent.
-Differential Diagnosis  Plausible secondary disorder; clear comparison. Good secondary, minor gaps.     Named but weak comparison.      Inappropriate / minimalAbsent.
-Treatment & Justification       Evidence-based therapy/meds; detailed links to symptoms.        Appropriate; good links.        Suitable; generic links.       Partly unsuitable or vague.      Absent/incorrect.
-Communication & Referencing     Clear structure, fluent writing, correct APA/Harvard, 0–1 errors, 800–1200 w.   Mostly clear; ≤3 errors.        Adequate; several errors; minor word-count drift.       Disorganised; frequent errors.  Ineffective or plagiarised.
+Criterion       5 (Excellent)  4 (Good)  3 (Adequate)  2 (Limited)  1 (Not Present)
+Knowledge & Symptom Analysis    Clear definition of "psychological disorder" noting distress/impairment; correctly classifies ≥5 normal and ≥5 disorder experiences with justification.    Good definition; most symptoms classified correctly with minor issues.    Basic or simplified definition with several classification errors or omissions.    Vague or incorrect definition with minimal or inaccurate classification.    Section missing or irrelevant.
+B-P-S Factors   Identifies biological, psychological and social factors and clearly explains how they interact.    Factors from all domains with brief or superficial interaction explanation.    Factors from at least two domains with little connection.    Factors from only one domain or largely incorrect.    Section missing.
+Diagnostic Reasoning (Primary)  Correct, well-supported diagnosis mapping evidence to each DSM criterion including duration.    Correct diagnosis with reasonable but incomplete mapping.    Plausible diagnosis with weak or vague justification.    Incorrect or poorly supported diagnosis.    No primary diagnosis provided.
+Differential Diagnosis  Plausible alternative disorder clearly ruled out with evidence.    Plausible alternative with weaker comparison.    Alternative named with minimal comparison.    Inappropriate or illogical alternative.    Not provided.
+Treatment & Justification       Recommends specific evidence-based treatments with detailed links to symptoms.    Appropriate treatments with generic justification.    Suitable treatment mentioned with little explanation.    Vague or inappropriate treatment recommendation.    No treatment plan provided.
+Communication & Referencing     Clear academic writing and structure; almost no language errors; correct referencing.    Mostly clear with minor errors.    Understandable but disorganised with several errors.    Difficult to follow with frequent errors or referencing issues.    Incoherent or plagiarised.
 
 ### SYSTEM
 You are a strict marker for Year-10 Psychology case-study tasks. You will analyze the student's submission against a detailed rubric. Your task is to assess each criterion, assign a band from 1 to 5, and provide a concise rationale for your decision.
