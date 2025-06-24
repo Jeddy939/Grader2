@@ -1,0 +1,220 @@
+2025-06-16 09:31:05,405 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 09:31:05,458 - ERROR - Input folder 'input_assessments' not found.
+2025-06-16 09:31:55,724 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 09:31:55,780 - INFO - --- Processing file: Psychological Disorder Case Study.docx ---
+2025-06-16 09:31:55,815 - INFO - Extracted approx. 1076 words from Psychological Disorder Case Study.docx.
+2025-06-16 09:31:55,815 - ERROR - Placeholder '{{STUDENT_SUBMISSION_TEXT_HERE}}' not found in master prompt.
+2025-06-16 09:31:55,816 - INFO - Sending request to Gemini API...
+2025-06-16 09:31:57,205 - ERROR - Gemini API call failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-06-16 09:31:57,206 - WARNING - Skipping Psychological Disorder Case Study.docx due to Gemini API call failure.
+2025-06-16 09:31:57,209 - INFO - --- Processing Complete ---
+2025-06-16 09:31:57,214 - INFO - Total files found: 1
+2025-06-16 09:31:57,215 - INFO - Files attempted for processing: 1
+2025-06-16 09:31:57,216 - INFO - Successfully graded: 0
+2025-06-16 09:31:57,217 - INFO - Reports saved in: output_feedback
+2025-06-16 09:31:57,218 - INFO - Log file saved at: grading_process.log
+2025-06-16 09:33:21,180 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 09:33:21,200 - INFO - --- Processing file: Psychological Disorder Case Study.docx ---
+2025-06-16 09:33:21,220 - INFO - Extracted approx. 1076 words from Psychological Disorder Case Study.docx.
+2025-06-16 09:33:21,222 - ERROR - Placeholder '{{STUDENT_SUBMISSION_TEXT_HERE}}' not found in master prompt.
+2025-06-16 09:33:21,223 - INFO - Sending request to Gemini API...
+2025-06-16 09:33:22,305 - ERROR - Gemini API call failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-06-16 09:33:22,306 - WARNING - Skipping Psychological Disorder Case Study.docx due to Gemini API call failure.
+2025-06-16 09:33:22,309 - INFO - --- Processing Complete ---
+2025-06-16 09:33:22,314 - INFO - Total files found: 1
+2025-06-16 09:33:22,314 - INFO - Files attempted for processing: 1
+2025-06-16 09:33:22,315 - INFO - Successfully graded: 0
+2025-06-16 09:33:22,316 - INFO - Reports saved in: output_feedback
+2025-06-16 09:33:22,317 - INFO - Log file saved at: grading_process.log
+2025-06-16 09:41:23,137 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 09:41:23,175 - INFO - --- Processing file: Psychological Disorder Case Study.docx ---
+2025-06-16 09:41:23,191 - INFO - Extracted approx. 1076 words from Psychological Disorder Case Study.docx.
+2025-06-16 09:41:23,196 - INFO - Sending request to Gemini API...
+2025-06-16 09:41:24,288 - ERROR - Gemini API call failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 35
+}
+]
+2025-06-16 09:41:24,291 - WARNING - Skipping Psychological Disorder Case Study.docx due to Gemini API call failure.
+2025-06-16 09:41:24,299 - INFO - --- Processing Complete ---
+2025-06-16 09:41:24,301 - INFO - Total files found: 1
+2025-06-16 09:41:24,301 - INFO - Files attempted for processing: 1
+2025-06-16 09:41:24,302 - INFO - Successfully graded: 0
+2025-06-16 09:41:24,303 - INFO - Reports saved in: output_feedback
+2025-06-16 09:41:24,303 - INFO - Log file saved at: grading_process.log
+2025-06-16 09:43:19,451 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 09:43:19,452 - INFO - --- Processing file: Psychological Disorder Case Study.docx ---
+2025-06-16 09:43:19,462 - INFO - Extracted approx. 1076 words from Psychological Disorder Case Study.docx.
+2025-06-16 09:43:19,463 - INFO - Sending request to Gemini API...
+2025-06-16 09:43:30,968 - INFO - Received response from Gemini API.
+2025-06-16 09:43:31,084 - INFO - Feedback report saved to: output_feedback\Psychological_graded.docx
+2025-06-16 09:43:31,085 - INFO - Successfully processed and graded: Psychological Disorder Case Study.docx
+2025-06-16 09:43:31,085 - INFO - --- Processing Complete ---
+2025-06-16 09:43:31,085 - INFO - Total files found: 1
+2025-06-16 09:43:31,085 - INFO - Files attempted for processing: 1
+2025-06-16 09:43:31,086 - INFO - Successfully graded: 1
+2025-06-16 09:43:31,086 - INFO - Reports saved in: output_feedback
+2025-06-16 09:43:31,086 - INFO - Log file saved at: grading_process.log
+2025-06-16 15:31:23,804 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 15:31:23,823 - INFO - --- Processing file: assessment term 2 Sophie Clapham.docx ---
+2025-06-16 15:31:23,847 - INFO - Extracted approx. 909 words from assessment term 2 Sophie Clapham.docx.
+2025-06-16 15:31:23,847 - INFO - Sending request to Gemini API...
+2025-06-16 15:31:29,630 - INFO - Received response from Gemini API.
+2025-06-16 15:31:29,680 - INFO - Feedback report saved to: output_feedback\assessment term 2 Sophie Clapham_graded.docx
+2025-06-16 15:31:29,680 - INFO - Successfully processed and graded: assessment term 2 Sophie Clapham.docx
+2025-06-16 15:31:29,682 - INFO - --- Processing file: MJ Psychology assessment.docx ---
+2025-06-16 15:31:29,711 - INFO - Extracted approx. 1378 words from MJ Psychology assessment.docx.
+2025-06-16 15:31:29,711 - INFO - Sending request to Gemini API...
+2025-06-16 15:31:43,596 - INFO - Received response from Gemini API.
+2025-06-16 15:31:43,611 - ERROR - Failed to parse YAML response from Gemini: while parsing a block mapping
+  in "<unicode string>", line 14, column 5:
+      - criterion: diagnostic_diff
+        ^
+expected <block end>, but found '<scalar>'
+  in "<unicode string>", line 17, column 178:
+     ... omplete; it lacks a definitive "ruling out" based on substantial ... 
+                                         ^
+Raw response:
+```yaml
+assistant_reasons:
+  - criterion: symptom_analysis
+    evidence: "Biological – (genes, brain chemistry - feel) \n- sleep reduction \n- wears hoodies despite hot weather \n- refuses to shower occasionally\n\n- low hygiene \n- patchy appetite \n- unusual sleep pattern (sleeps after school, stays up until early morning) \nPsychological – (thoughts – think)\n- delusions (believes streetlights flash in morse code)\n- hallucinations (numbers rearranging on page as he reads) \n- speaks to himself \n- speaking rapidly and off topic \n- hears people speaking to him (auditory hallucinations)\n- claims that people communicate online in secret codes\n- mood swings (hyper to withdrawal, energy spikes) \n- attempts to jam “illicit frequencies”\nSocial – (social interactions) \n- missing events (skips football training) \n- isolation (doesn’t hangout with friends outside of school - stays to himself) \n- holds minimal eye contact \n- dropping grades (slipping from A’ to C’s) \n- quiet speech"
+    band: 3
+    rationale: "The student lists several biological, psychological, and social factors. However, the links between them are weak, and there is no clear distinction between normal and pathological experiences.  While several symptoms are mentioned, they aren't explicitly categorized, nor is there a definition of a psychological disorder, failing to meet the anchors for bands 4 and 5."
+  - criterion: bps_factors
+    evidence: "Biological, psychological, and social factors all influence and affect one another in everyday life. Sam D experiences late night thoughts of morse code inscriptions and auditory hallucinations, thus causing sleep deprivation. This is an example of how psychological factors can tie into biological. Though not noted, this then hinders social factors and social interactions. This reduction in sleep has affected Sam’s sleeping pattern, him sleeping throughout the afternoons/daytime rather then at night (biological). Unusual sleep patterns and/or a low amount of hours of sleep can impair cognitive functions. For Sam, he struggles with staying on topic when speaking, and has drastic mood swings (psychological). Therefore, his lack of energy has caused him to have a severe drop in grades and isolation (social)."
+    band: 3
+    rationale: "The student attempts to link B-P-S factors but the connections are superficial and lack depth. The interaction isn't coherently explained; it merely lists the factors with weak linkages, failing to meet the anchors for bands 4 or 5."
+  - criterion: diagnostic_primary
+    evidence: "Sam D’s symptoms suggest a case of Schizophrenia, due to his consistent hallucinations, delusions, disorganized speech, and catatonic  behaviour. These are required features that meet the diagnostic criterion. The characteristically symptoms of Schizophrenia involve a range of cognitive, behavioural, and emotional dysfunctions. (DSM). Sam has not had these symptoms arise as a result of drug use, alcohol consumption or medication effects. Derived from the collected information, Sam has been undergoing continuous hallucinations and delusions, which must be persistent for at least 1 month. No family history of autism spectrum disorder or other communicated disorders have been reported, thereby further backing up the appropriateness of this diagnosis. He experiences emotional dysregulation, a slight case of anhedonia (lack of interest in food), and functional consequences (limited social contacts and social withdrawal). He laughs in the absence of an appropriate stimulus (incongruent affect), disturbed sleep patterns, and impaired insight towards his symptoms and possible condition."
+    band: 4
+    rationale: "The student accurately diagnoses Schizophrenia.  The justification is strong, citing several DSM-5 criteria and discussing the duration, though not explicitly citing all criteria or providing airtight justification. This means it meets the criteria for band 4, but not 5."
+  - criterion: diagnostic_diff
+    evidence: "The presentation raises concern for schizophrenia, though there is sufficient evidence to suggest a diagnosis of bipolar I disorder. Although there is no documented history of prior mood disorders meeting full diagnostic criteria, recent behavioural data communicates the high probability of a manic episode as of the past month. He suffers from a decreased need for sleep, flight of ideas with subjective experience of racing thoughts (reports of ideas flowing so fast his “hands cant keep up”) and distractibility (DSM-5, criterion B5) – speaks rapidly and off topic (criterion B3).  He exhibits an increase in goal-directed activity (obsessive need to discover hidden codes/frequencies etc.), possible excessive involvement in high risk activities (neglecting to turn off a bunsen burner), indicating a clear presence of psychotic features. This feasible episode is also not attributable to the physiological effects of a substance or medication. His mother has reported a noticeable change in behaviour, however he has not been necessitated to hospitalization. Despite this, his pronounced symptoms have caused significant impairment in social and occupational areas in his life, prompting referral to an early psychosis service by his GP.  Though he meets almost every required symptom in the criterion to finalise a confident diagnosis, there is no conclusive evidence that he has experienced a manic episode once before in his lifetime, which therefore precludes a definite diagnosis of Bipolar I disorder at this current stage. Nonetheless, gathered records strongly suggest that he is presently experiencing his first manic episode. Although a diagnosis of Bipolar I disorder with psychotic features is highly probable, the overall presentation more closely aligns with a primary psychotic disorder. Given available evidence, a diagnosis of schizophrenia is more strongly supported."
+    band: 4
+    rationale: "The student names a plausible secondary disorder (Bipolar I) and attempts a comparison. However, the comparison is not entirely complete; it lacks a definitive "ruling out" based on substantial evidence. Hence it falls just short of band 5."
+  - criterion: treatment
+    evidence: "My calculated treatment approach for Sam D is a combination of cognitive behavioural therapy (CBT) and Cognitive Behavioural Therapy for Psychosis (CBTp). Though it is documented that medications are the most efficient approach to Schizophrenia, I believe that psychotherapy will be extremely helpful as to provide him with support and navigate him towards enhancing coping strategies and social functioning. This therefore will help him become knowledgeable of his psychosis, helping him understand what’s happening and how to manage. CBTp will help Sam address his persistent delusions, hallucinations and limited insight. This approach is supported by clinical evidence demonstrating its efficiency in reducing the severity of psychotic symptoms. In addition, family therapy is strongly recommended given the mothers growing concern for her son and his state, this will then foster better communication and reduce conflict and/or worry. Possible arts and creative therapies may also be explored as it could benefit Sam to help him verbally express himself and improve his ability to verbalize internal experiences. Treatment teams like his current GP must continue, with the addition of a psychiatrist who can then coordinate necessary medication management and overall treatment planning. While therapy aims to provide long-term skills and insights, medication primarily focuses on symptom management. Antipsychotic medicines will be introduced as it is considered to be most common prescribed when treating schizophrenia. They control symptoms mainly by affecting brain receptors for different neurotransmitters, or chemical messengers. Most antipsychotic medications act on dopamine and serotonin receptors (mayo clinic 2023). This is critical in alleviating positive symptoms such as his hallucinations, delusions, and disordered thinking. Sam will begin treatment with low doses, and regular monitoring will be conducted to assess for negative side effects and for his functional progress. In summary, this treatment model emphasizes a biopsychosocial approach, aiming to not only manage and reduce Sam’s symptoms, but also to offer him an effective long-term recovery."
+    band: 5
+    rationale: "The student proposes an evidence-based treatment plan (CBTp, family therapy, medication) with detailed links to specific symptoms. The rationale for each component is clearly explained, fully meeting the criteria for band 5."
+  - criterion: communication
+    evidence: "The entire student response"
+    band: 4
+    rationale: "The student's writing is generally clear and well-structured.  There are some minor grammatical and organizational errors. Referencing is largely correct, but there may be a few minor inconsistencies. Word count is not provided, so the penalty band cannot be applied in this analysis."
+
+assistant_grade:
+  total_points: 23
+  breakdown:
+    symptom_analysis: {band: 3, points: 3}
+    bps_factors: {band: 3, points: 3}
+    diagnostic_primary: {band: 4, points: 4}
+    diagnostic_diff: {band: 4, points: 4}
+    treatment: {band: 5, points: 5}
+    communication: {band: 4, points: 4}
+  overall_grade: C
+```
+
+2025-06-16 15:31:43,615 - WARNING - Skipping MJ Psychology assessment.docx due to YAML parsing failure.
+2025-06-16 15:31:43,616 - INFO - Raw Gemini response saved to: output_feedback\MJ_raw_gemini_response.txt
+2025-06-16 15:31:43,617 - INFO - --- Processing Complete ---
+2025-06-16 15:31:43,617 - INFO - Total files found: 2
+2025-06-16 15:31:43,618 - INFO - Files attempted for processing: 2
+2025-06-16 15:31:43,618 - INFO - Successfully graded: 1
+2025-06-16 15:31:43,619 - INFO - Reports saved in: output_feedback
+2025-06-16 15:31:43,619 - INFO - Log file saved at: grading_process.log
+2025-06-16 15:35:23,566 - INFO - Starting AI Student Assessment Grader...
+2025-06-16 15:35:23,568 - INFO - --- Processing file: assessment term 2 Sophie Clapham.docx ---
+2025-06-16 15:35:23,598 - INFO - Extracted approx. 909 words from assessment term 2 Sophie Clapham.docx.
+2025-06-16 15:35:23,598 - INFO - Sending request to Gemini API...
+2025-06-16 15:35:29,537 - INFO - Received response from Gemini API.
+2025-06-16 15:35:29,591 - INFO - Feedback report saved to: output_feedback\assessment term 2 Sophie Clapham_graded.docx
+2025-06-16 15:35:29,592 - INFO - Successfully processed and graded: assessment term 2 Sophie Clapham.docx
+2025-06-16 15:35:29,594 - INFO - --- Processing file: MJ Psychology assessment.docx ---
+2025-06-16 15:35:29,637 - INFO - Extracted approx. 1378 words from MJ Psychology assessment.docx.
+2025-06-16 15:35:29,637 - INFO - Sending request to Gemini API...
+2025-06-16 15:35:43,271 - INFO - Received response from Gemini API.
+2025-06-16 15:35:43,329 - INFO - Feedback report saved to: output_feedback\MJ_graded.docx
+2025-06-16 15:35:43,330 - INFO - Successfully processed and graded: MJ Psychology assessment.docx
+2025-06-16 15:35:43,331 - INFO - --- Processing Complete ---
+2025-06-16 15:35:43,336 - INFO - Total files found: 2
+2025-06-16 15:35:43,336 - INFO - Files attempted for processing: 2
+2025-06-16 15:35:43,337 - INFO - Successfully graded: 2
+2025-06-16 15:35:43,337 - INFO - Reports saved in: output_feedback
+2025-06-16 15:35:43,338 - INFO - Log file saved at: grading_process.log
+2025-06-24 13:17:46,117 - INFO - Starting AI Student Assessment Grader...
+2025-06-24 13:17:46,139 - INFO - --- Processing file: 2702238001 - Florence Brown - Term_2_Psychology_assessment.docx ---
+2025-06-24 13:17:46,187 - INFO - Extracted approx. 1606 words from 2702238001 - Florence Brown - Term_2_Psychology_assessment.docx.
+2025-06-24 13:17:46,187 - INFO - Sending request to Gemini API...
+2025-06-24 13:17:52,673 - INFO - Received response from Gemini API.
+2025-06-24 13:17:52,689 - INFO - Sending request to Gemini API...
+2025-06-24 13:17:55,928 - INFO - Received response from Gemini API.
+2025-06-24 13:17:55,929 - INFO - Grade review saved to: output_feedback\2702238001 - Florence Brown - Term_2_Psychology_assessment_grade_review.txt
+2025-06-24 13:17:55,929 - INFO - Applied criterion adjustments: {'symptom_analysis': 4, 'bps_factors': 3, 'diagnostic_primary': 3, 'diagnostic_diff': 3}
+2025-06-24 13:17:55,987 - INFO - Feedback report saved to: output_feedback\2702238001 - Florence Brown - Term_2_Psychology_assessment_graded.docx
+2025-06-24 13:17:55,987 - INFO - Successfully processed and graded: 2702238001 - Florence Brown - Term_2_Psychology_assessment.docx
+2025-06-24 13:17:55,988 - INFO - --- Processing file: assessment term 2 Sophie Clapham.docx ---
+2025-06-24 13:17:56,028 - INFO - Extracted approx. 1795 words from assessment term 2 Sophie Clapham.docx.
+2025-06-24 13:17:56,028 - INFO - Sending request to Gemini API...
+2025-06-24 13:18:02,196 - INFO - Received response from Gemini API.
+2025-06-24 13:18:02,200 - INFO - Sending request to Gemini API...
+2025-06-24 13:18:05,777 - INFO - Received response from Gemini API.
+2025-06-24 13:18:05,778 - INFO - Grade review saved to: output_feedback\assessment term 2 Sophie Clapham_grade_review.txt
+2025-06-24 13:18:05,778 - INFO - Applied criterion adjustments: {'symptom_analysis': 4, 'bps_factors': 3, 'diagnostic_primary': 2}
+2025-06-24 13:18:05,835 - INFO - Feedback report saved to: output_feedback\assessment term 2 Sophie Clapham_graded.docx
+2025-06-24 13:18:05,835 - INFO - Successfully processed and graded: assessment term 2 Sophie Clapham.docx
+2025-06-24 13:18:05,836 - INFO - --- Processing file: MJ Psychology assessment.docx ---
+2025-06-24 13:18:05,874 - INFO - Extracted approx. 1460 words from MJ Psychology assessment.docx.
+2025-06-24 13:18:05,874 - INFO - Sending request to Gemini API...
+2025-06-24 13:18:11,615 - INFO - Received response from Gemini API.
+2025-06-24 13:18:11,619 - INFO - Sending request to Gemini API...
+2025-06-24 13:18:15,097 - INFO - Received response from Gemini API.
+2025-06-24 13:18:15,098 - INFO - Grade review saved to: output_feedback\MJ_grade_review.txt
+2025-06-24 13:18:15,098 - INFO - Applied criterion adjustments: {'symptom_analysis': 4, 'bps_factors': 3, 'diagnostic_primary': 4}
+2025-06-24 13:18:15,152 - INFO - Feedback report saved to: output_feedback\MJ_graded.docx
+2025-06-24 13:18:15,153 - INFO - Successfully processed and graded: MJ Psychology assessment.docx
+2025-06-24 13:18:15,153 - INFO - --- Processing Complete ---
+2025-06-24 13:18:15,153 - INFO - Total files found: 3
+2025-06-24 13:18:15,153 - INFO - Files attempted for processing: 3
+2025-06-24 13:18:15,153 - INFO - Successfully graded: 3
+2025-06-24 13:18:15,153 - INFO - Reports saved in: output_feedback
+2025-06-24 13:18:15,153 - INFO - Log file saved at: grading_process.log
+2025-06-24 13:18:15,154 - INFO - Summary saved to: output_feedback\grading_summary.csv

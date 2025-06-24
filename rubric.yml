@@ -1,0 +1,41 @@
+rubric_name: "Year-10 Case-Study Diagnostic Task"
+total_points_possible: 25
+word_count:
+  min: 750
+  max: 1250
+criteria:
+  symptom_analysis:
+    name: "Knowledge & Symptom Analysis"
+    max_points: 5
+  bps_factors:
+    name: "Biological, Psychological & Social Factors"
+    max_points: 4
+  diagnostic_primary:
+    name: "Primary Diagnosis Accuracy & Justification"
+    max_points: 4
+  diagnostic_diff:
+    name: "Differential Diagnosis Reasoning"
+    max_points: 4
+  treatment:
+    name: "Treatment Selection & Justification"
+    max_points: 5
+  communication:
+    name: "Communication & Referencing"
+    max_points: 3
+rules:
+  - name: "Word-count ceiling"
+    condition: "word_count < 750 or word_count > 1250"
+    action: "set_band"
+    target: "communication"
+    band: 2
+  - name: "Primary diagnosis incorrect"
+    condition: "diagnostic_primary_band < 3"
+    action: "cap_points"
+    target: "treatment"
+    points: 3
+grade_bands:
+  A: 20
+  B: 15
+  C: 12
+  D_ratio: 0.4
+  E_ratio: 0.2

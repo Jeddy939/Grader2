@@ -1,0 +1,5 @@
+python-dotenv
+google-generativeai
+python-docx
+PyPDF2
+PyYAML

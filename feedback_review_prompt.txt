@@ -1,0 +1,15 @@
+You are an AI assistant tasked with checking the accuracy of draft feedback for a psychology case study.
+Carefully read the student's submission and the AI's feedback.
+Identify any feedback comments that are incorrect, contradictory, or ask the student to fix something already covered in the submission.
+Quote short snippets from the student's text that demonstrate why the feedback is wrong or redundant.
+If all feedback is appropriate and none of it conflicts with the submission, state that no issues were found.
+Respond using a concise list of bullet points.
+
+### STUDENT_SUBMISSION
+{{STUDENT_SUBMISSION_TEXT_HERE}}
+
+### AI_DRAFT_FEEDBACK
+{{DRAFT_FEEDBACK_TEXT_HERE}}
+
+### REVIEW_OUTPUT
+Provide bullet points highlighting any problematic or redundant feedback. If everything is accurate, simply write "No issues found.".
