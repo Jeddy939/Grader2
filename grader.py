@@ -482,6 +482,13 @@ def format_feedback_as_docx(
             rationale = reason_item.get("rationale", "No rationale provided.")
             evidence = reason_item.get("evidence", "No evidence quoted.")
 
+            # Split out any example improvements from the rationale.
+            example_improvements = None
+            match = re.search(r"(?i)example improvements:?\s*(.*)", rationale)
+            if match:
+                rationale = rationale[: match.start()].strip()
+                example_improvements = match.group(1).strip()
+
             criterion_details = rubric_criteria_details.get(
                 criterion_id,
                 {"name": criterion_id.replace("_", " ").title(), "max_points": "N/A"},
@@ -519,6 +526,17 @@ def format_feedback_as_docx(
                     doc.add_paragraph(line, style="List Bullet")
             else:
                 doc.add_paragraph(evidence if evidence else "N/A")
+
+            if example_improvements:
+                doc.add_paragraph("Example Improvements:", style="Intense Quote")
+                if "\n" in example_improvements:
+                    for line in example_improvements.splitlines():
+                        line = line.strip()
+                        if not line:
+                            continue
+                        doc.add_paragraph(line, style="List Bullet")
+                else:
+                    doc.add_paragraph(example_improvements)
 
             doc.add_paragraph()  # Spacer
 
