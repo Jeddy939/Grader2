@@ -313,7 +313,11 @@ def parse_gemini_yaml_response(response_text):
 
 
 def compute_overall_grade(total_points, grade_bands, total_possible):
-    """Compute a letter grade from a total point score based on thresholds."""
+    """Compute a letter grade from a total point score based on thresholds.
+
+    The default mapping for the 30-point rubric is:
+        27–30 = A, 24–26 = B, 21–23 = C, 18–20 = D, below 18 = E.
+    """
     if not isinstance(total_points, (int, float)) or not isinstance(grade_bands, dict):
         return "N/A"
 
