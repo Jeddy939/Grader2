@@ -1,41 +1,34 @@
-rubric_name: "Year-10 Case-Study Diagnostic Task"
-total_points_possible: 25
-word_count:
-  min: 750
-  max: 1250
+# Simplified 30-Point Rubric
+
+total_points_possible: 30
+
+# Defines the name and maximum points for each criterion.
+# The 'band' (1-5) from the AI will be treated as the 'points' achieved.
 criteria:
   symptom_analysis:
     name: "Knowledge & Symptom Analysis"
     max_points: 5
   bps_factors:
-    name: "Biological, Psychological & Social Factors"
-    max_points: 4
+    name: "Bio-Psycho-Social Factors"
+    max_points: 5
   diagnostic_primary:
-    name: "Primary Diagnosis Accuracy & Justification"
-    max_points: 4
+    name: "Diagnostic Reasoning (Primary)"
+    max_points: 5
   diagnostic_diff:
-    name: "Differential Diagnosis Reasoning"
-    max_points: 4
+    name: "Differential Diagnosis"
+    max_points: 5
   treatment:
-    name: "Treatment Selection & Justification"
+    name: "Treatment & Justification"
     max_points: 5
   communication:
     name: "Communication & Referencing"
-    max_points: 3
-rules:
-  - name: "Word-count ceiling"
-    condition: "word_count < 750 or word_count > 1250"
-    action: "set_band"
-    target: "communication"
-    band: 2
-  - name: "Primary diagnosis incorrect"
-    condition: "diagnostic_primary_band < 3"
-    action: "cap_points"
-    target: "treatment"
-    points: 3
+    max_points: 5
+
+# Optional: Maps the final point score to a letter grade.
+# Thresholds represent the minimum points needed for that grade.
 grade_bands:
-  A: 20
-  B: 15
-  C: 12
-  D_ratio: 0.4
-  E_ratio: 0.2
+  A: 27  # 90%
+  B: 24  # 80%
+  C: 21  # 70%
+  D: 18  # 60%
+  E: 0   # Below 60%

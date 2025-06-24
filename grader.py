@@ -312,70 +312,46 @@ def parse_gemini_yaml_response(response_text):
         return None
 
 
-def compute_overall_grade(breakdown, grade_bands, total_possible):
-    """Compute a letter grade from rubric breakdown points."""
-    if not isinstance(breakdown, dict):
+def compute_overall_grade(total_points, grade_bands, total_possible):
+    """Compute a letter grade from a total point score based on thresholds."""
+    if not isinstance(total_points, (int, float)) or not isinstance(grade_bands, dict):
         return "N/A"
 
-    total_points = 0
-    for item in breakdown.values():
-        try:
-            total_points += int(item.get("points", 0))
-        except Exception:
-            continue
-
-    if total_points >= grade_bands.get("A", total_possible):
+    # The thresholds are minimums, so we check from highest to lowest.
+    if total_points >= grade_bands.get("A", total_possible * 0.9):
         return "A"
-    if total_points >= grade_bands.get("B", 0):
+    if total_points >= grade_bands.get("B", total_possible * 0.8):
         return "B"
-    if total_points >= grade_bands.get("C", 0):
+    if total_points >= grade_bands.get("C", total_possible * 0.7):
         return "C"
-
-    if total_points >= total_possible * grade_bands.get("D_ratio", 0):
+    if total_points >= grade_bands.get("D", total_possible * 0.6):
         return "D"
-    if total_points >= total_possible * grade_bands.get("E_ratio", 0):
-        return "E"
     return "E"
 
 
 def calculate_final_grade(bands_data, word_count, rubric_config):
     """Apply rubric rules and compute final grade breakdown."""
     criteria_cfg = rubric_config.get("criteria", {})
-    grade_bands = rubric_config.get("grade_bands", {})
+    grade_bands_config = rubric_config.get("grade_bands", {})
     total_possible = rubric_config.get("total_points_possible", 0)
-
-    bands = bands_data.copy()
-
-    # Apply rules deterministically
-    for rule in rubric_config.get("rules", []):
-        name = rule.get("name")
-        try:
-            condition = rule.get("condition", "")
-            local_vars = {f"{k}_band": bands.get(k) for k in bands}
-            local_vars["word_count"] = word_count
-            if eval(condition, {}, local_vars):
-                if rule.get("action") == "set_band":
-                    target = rule.get("target")
-                    if target:
-                        bands[target] = rule.get("band", bands.get(target))
-                elif rule.get("action") == "cap_points":
-                    target = rule.get("target")
-                    points_cap = rule.get("points")
-                    if target and target in bands:
-                        bands[target] = min(bands[target], points_cap)
-        except Exception:
-            logging.warning(f"Failed to evaluate rule '{name}'.")
 
     breakdown = {}
     total_points = 0
+
+    # In our new system, the 'band' (1-5) is the score for that criterion.
     for cid, cfg in criteria_cfg.items():
-        band = int(bands.get(cid, 1))
-        max_points = int(cfg.get("max_points", band))
-        points = min(band, max_points)
-        breakdown[cid] = {"band": band, "points": points}
+        # Get the band assigned by the AI for this criterion, default to 0 if not found.
+        points = int(bands_data.get(cid, 0))
+
+        # Ensure points do not exceed the max defined in the rubric.
+        max_points = int(cfg.get("max_points", 5))
+        points = min(points, max_points)
+
+        # We store the band and points separately, though they are now the same.
+        breakdown[cid] = {"band": points, "points": points}
         total_points += points
 
-    overall_grade = compute_overall_grade(breakdown, grade_bands, total_possible)
+    overall_grade = compute_overall_grade(total_points, grade_bands_config, total_possible)
 
     return {
         "total_points": total_points,
@@ -408,26 +384,6 @@ def review_grade(student_text, grade_yaml_text, api_key, review_prompt_template=
     return call_gemini_api(prompt, api_key)
 
 
-def extract_new_grade_from_review(review_text):
-    """Attempt to extract a revised overall grade from the review text."""
-    if not review_text:
-        return None
-
-    # Common patterns such as "grade should be B" or "recommended grade: A"
-    patterns = [
-        r"grade\s*should\s*be\s*([A-E])",
-        r"recommended\s*grade[:\s]+([A-E])",
-        r"proposed\s*grade[:\s]+([A-E])",
-        r"new\s*grade[:\s]+([A-E])",
-        r"should\s*be\s*an?\s*([A-E])",
-    ]
-
-    for pat in patterns:
-        m = re.search(pat, review_text, re.IGNORECASE)
-        if m:
-            return m.group(1).upper()
-    return None
-
 
 def apply_criteria_adjustments(parsed_data, adjustments, rubric_config):
     """Apply band changes from review to the parsed YAML data."""
@@ -445,7 +401,7 @@ def apply_criteria_adjustments(parsed_data, adjustments, rubric_config):
     total_points = sum(int(item.get("points", 0)) for item in breakdown.values())
     grade_section["total_points"] = total_points
     grade_section["overall_grade"] = compute_overall_grade(
-        breakdown,
+        total_points,
         rubric_config.get("grade_bands", {}),
         rubric_config.get("total_points_possible", 0),
     )
@@ -484,14 +440,14 @@ def format_feedback_as_docx(
         breakdown = grade_info.get("breakdown", {})
 
         ai_overall_grade = grade_info.get("overall_grade")
-        computed_grade = compute_overall_grade(
-            breakdown, rubric_config.get("grade_bands", {}), rubric_config.get("total_points_possible", 0)
-        )
-        final_grade = override_grade if override_grade else computed_grade
         try:
             total_points = sum(int(item.get("points", 0)) for item in breakdown.values())
         except Exception:
             total_points = grade_info.get("total_points", "N/A")
+        computed_grade = compute_overall_grade(
+            total_points, rubric_config.get("grade_bands", {}), rubric_config.get("total_points_possible", 0)
+        )
+        final_grade = override_grade if override_grade else computed_grade
         max_total_points = rubric_config.get("total_points_possible", 0)
 
         doc.add_heading("Overall Assessment", level=2)
@@ -645,18 +601,12 @@ def main():
         output_docx_path = OUTPUT_FOLDER / f"{output_filename_base}_graded.docx"
 
         review_text = review_grade(extracted_text, api_response, api_key)
-        override_grade = None
         if review_text:
-            override_grade = extract_new_grade_from_review(review_text)
             review_path = OUTPUT_FOLDER / f"{output_filename_base}_grade_review.txt"
             try:
                 with open(review_path, "w", encoding="utf-8") as rf:
                     rf.write(review_text)
                 logging.info(f"Grade review saved to: {review_path}")
-                if override_grade:
-                    logging.info(
-                        f"Applying grade override from review: {override_grade}"
-                    )
                 adjustments = extract_criteria_adjustments(review_text)
                 if adjustments:
                     apply_criteria_adjustments(parsed_data, adjustments, rubric_config)
@@ -670,12 +620,10 @@ def main():
         except Exception:
             total_points = parsed_data.get("assistant_grade", {}).get("total_points", "N/A")
         overall_grade = compute_overall_grade(
-            breakdown,
+            total_points,
             rubric_config.get("grade_bands", {}),
             rubric_config.get("total_points_possible", 0),
         )
-        if override_grade:
-            overall_grade = override_grade
 
         summary_entries.append((student_identifier, total_points, overall_grade))
 
@@ -685,7 +633,6 @@ def main():
             student_identifier,
             rubric_config,
             doc_author=doc_author,
-            override_grade=override_grade,
         )
         successful_grades += 1
         logging.info(f"Successfully processed and graded: {filename}")
